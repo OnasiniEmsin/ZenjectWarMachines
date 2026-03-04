@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Shell : MonoBehaviour
 {
-    float _speed = 50f;
+    float _speed = 250f;
     public float _lifeTime=3f;
 
     public class Pool : MonoMemoryPool<Vector3, short, short, Shell> {

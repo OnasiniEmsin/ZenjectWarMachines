@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Molot :  SpriteGel,IUnit,IMoveTank 
+public class Molot :  SpriteGel,IUnit,IMoveTank
 {
     bool isMoving;
+    public bool ready=false;
     public float moveSpeed;
+    public IReloader ammoLoader;
+
+    public IHEalth health;
     
 
     // Update is called once per frame
@@ -55,5 +59,9 @@ public class Molot :  SpriteGel,IUnit,IMoveTank
     }
     void MoveHorizontal(short i){
         transform.Translate(i*moveSpeed*Time.deltaTime,0,0);
+    }
+    public void fire(){
+        ready=false;
+        ammoLoader.reload();
     }
 }

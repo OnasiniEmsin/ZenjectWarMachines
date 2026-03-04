@@ -15,9 +15,10 @@ public class Shooter : MonoBehaviour
 
     protected void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)&&molot.ready)
         {
-            firePoint=molot.firePoint;
+            molot.fire();
+            firePoint =molot.firePoint;
             Debug.Log(_bulletPool);
             _bulletPool.Spawn(
             firePoint.position,desiring((short)(molot.sOTF+1)),

@@ -9,7 +9,6 @@ public class ShellFactoryInstaller : MonoInstaller
     {
         Container.BindMemoryPool<Shell, Shell.Pool>()
             .WithInitialSize(20)
-            .FromComponentInNewPrefab(bulletPrefab).UnderTransform(canvas)
-            ;
+            .FromComponentInNewPrefab(bulletPrefab).UnderTransform(canvas);
     }
 }
